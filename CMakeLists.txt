@@ -16,6 +16,7 @@ set(PROJECT_VERSION 1.0.1)
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 configure_file("${CMAKE_SOURCE_DIR}/deployment/deployment.json.in" "${CMAKE_BINARY_DIR}/deployment.json")
+configure_file("${CMAKE_SOURCE_DIR}/deployment/deployment.sh.in" "${CMAKE_BINARY_DIR}/deployment.sh")
 
 add_executable(DeploymentProject
   main.cpp
@@ -27,19 +28,4 @@ target_compile_definitions(DeploymentProject
 target_link_libraries(DeploymentProject
   PRIVATE Qt5::Core Qt5::Quick)
 
-add_custom_command(TARGET ${CMAKE_PROJECT_NAME}
-                   POST_BUILD
-                   COMMAND cqtdeployer -confFile "${CMAKE_BINARY_DIR}/deployment.json")
-
-install(DIRECTORY "${CMAKE_BINARY_DIR}/DeploymentPackage/" DESTINATION "/opt/${CMAKE_PROJECT_NAME}")
-set(CPACK_GENERATOR "DEB")
-set(CPACK_DEBIAN_PACKAGE_NAME "${CMAKE_PROJECT_NAME}")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Muhammet Kucuk")
-set(CPACK_DEBIAN_FILE_NAME "${CMAKE_PROJECT_NAME}.deb")
-set(CPACK_DEBIAN_PACKAGE_VERSION ${PROJECT_VERSION})
-set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://muhammetkucuk.com")
-set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Debian package test with CPack")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Test for Deb")
-set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
-    "${CMAKE_SOURCE_DIR}/deployment/prerm;${CMAKE_SOURCE_DIR}/deployment/postinst")
-include(CPack)
+install(CODE "execute_process(COMMAND sh \"${CMAKE_BINARY_DIR}/deployment.sh\")")

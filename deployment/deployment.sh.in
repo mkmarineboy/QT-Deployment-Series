@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cqtdeployer -confFile "${CMAKE_BINARY_DIR}/deployment.json"

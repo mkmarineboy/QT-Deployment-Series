@@ -3,7 +3,7 @@
     "deploySystem": true,
     "extractPlugins": true,
     "noCheckRPATH": true,
-    "qif": false,
+    "qif": true,
     "bin": "${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}",
     "qmlDir": "${CMAKE_SOURCE_DIR}",
     "qmake": "${CMAKE_PREFIX_PATH}/bin/qmake",
