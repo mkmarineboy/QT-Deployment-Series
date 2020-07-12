@@ -2,7 +2,7 @@
 
 chmod +x /opt/DeploymentProject/bin/DeploymentProject
 chmod 755 /opt/DeploymentProject/bin/DeploymentProject
-cp /opt/mPower/DeploymentProject.sh /opt/DeploymentProject/DeploymentProject 
+cp /opt/DeploymentProject/DeploymentProject.sh /opt/DeploymentProject/DeploymentProject 
 chmod +x /opt/DeploymentProject/DeploymentProject 
 chmod 755 /opt/DeploymentProject/DeploymentProject 
 ln -s /opt/DeploymentProject/DeploymentProject /usr/local/bin/DeploymentProject
