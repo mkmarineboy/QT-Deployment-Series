@@ -1,0 +1,10 @@
+{
+    "clear": true,
+    "noCheckPATH": true,
+    "deploySystem": true,
+    "qif": true,
+    "bin": "${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}",
+    "qmlDir": "${CMAKE_SOURCE_DIR}",
+    "qmake": "${CMAKE_PREFIX_PATH}/bin/qmake",
+    "targetDir" : "${CMAKE_BINARY_DIR}/DeploymentPackage"
+}
