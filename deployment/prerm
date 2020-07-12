@@ -1,0 +1,3 @@
+#!/bin/sh
+rm /opt/DeploymentProject/DeploymentProject
+rm /usr/local/bin/DeploymentProject

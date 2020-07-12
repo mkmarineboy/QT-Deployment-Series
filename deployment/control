@@ -1,0 +1,6 @@
+Package: deploymentproject
+Maintainer: Muhammet Kucuk
+Architecture: amd64
+Version: 1.0.0
+Homepage: https://muhammetkucuk.com
+Description: It's an example for deployment
