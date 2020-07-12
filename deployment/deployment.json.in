@@ -1,7 +1,8 @@
 {
     "clear": true,
-    "noCheckPATH": true,
     "deploySystem": true,
+    "extractPlugins": true,
+    "noCheckRPATH": true,
     "qif": true,
     "bin": "${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}",
     "qmlDir": "${CMAKE_SOURCE_DIR}",
